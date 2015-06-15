@@ -1,0 +1,69 @@
+# depslib dependency file v1.0
+1433075010 source:e:\codes\masongain\polynomial.cpp
+	"polynomial.h"
+	<iostream>
+	<list>
+	<cmath>
+
+1433075010 e:\codes\masongain\polynomial.h
+	<iostream>
+	<list>
+	<cmath>
+
+1433845868 source:e:\codes\masongain\main.cpp
+	<iostream>
+	<list>
+	<cmath>
+	<vector>
+	"polynomial.h"
+	"folynomial.h"
+	"transferfunction.h"
+	"digraph.h"
+
+1433656039 source:e:\codes\masongain\transferfunction.cpp
+	"transferfunction.h"
+	<iostream>
+	<list>
+	<cmath>
+	"folynomial.h"
+	"polynomial.h"
+
+1433656039 e:\codes\masongain\transferfunction.h
+	<iostream>
+	<list>
+	<cmath>
+	"polynomial.h"
+	"folynomial.h"
+
+1433138316 source:e:\codes\masongain\folynomial.cpp
+	"folynomial.h"
+	<iostream>
+	<list>
+	<cmath>
+	"polynomial.h"
+
+1433138232 e:\codes\masongain\folynomial.h
+	<iostream>
+	<list>
+	<cmath>
+	"polynomial.h"
+
+1433845868 source:e:\codes\masongain\digraph.cpp
+	"digraph.h"
+	<iostream>
+	<list>
+	<vector>
+	<cmath>
+	"folynomial.h"
+	"polynomial.h"
+	"transferfunction.h"
+
+1433843676 e:\codes\masongain\digraph.h
+	<iostream>
+	<list>
+	<cmath>
+	<vector>
+	"polynomial.h"
+	"folynomial.h"
+	"transferfunction.h"
+

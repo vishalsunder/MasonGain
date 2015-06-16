@@ -24,16 +24,9 @@ void transferfunction:: add(transferfunction t1, transferfunction t2)
     folynomial n,n1,n2;
     folynomial d;
     d.mult(t1.D,t2.D);
-    //d.display();
-    //cout << endl;
     n1.mult(t1.N,t2.D);
-    //n1.display();
-    //cout << endl;
     n2.mult(t1.D,t2.N);
-    //n2.display();
-    //cout << endl;
     n.add(n1,n2);
-    //n.display();
     N.num(n,d);
     D.den(n,d);
 }

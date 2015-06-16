@@ -3,12 +3,10 @@
 #include <list>
 #include <cmath>
 #include "polynomial.h"
-//#include "transferfunction.h"
 using namespace std;
 
 void folynomial:: declare()
 {
-   // foly f;
     int m,n;
     cout << "enter number of factors in the polynomial:" << endl;
     cin >> m;
@@ -51,7 +49,6 @@ void folynomial:: display()
                 cout << "^" << i->exp;
         }
     }
-    //cout << endl;
 }
 void folynomial:: add(folynomial f1, folynomial f2)
 {
@@ -122,14 +119,12 @@ void folynomial:: add(folynomial f1, folynomial f2)
                        (j->p).assignconst(((j->p).value())/((i->p).value()));
                        F.push_front((*i));
                        i = (f1.F).erase(i);
-                       //j = (f2.F).erase(j);
                        break;
                    }
                    else if((i->p).value()>(j->p).value())
                    {
                        (i->p).assignconst(((i->p).value())/((j->p).value()));
                        F.push_front((*j));
-                       //i = (f1.F).erase(i);
                        j = (f2.F).erase(j);
                        break;
                    }
@@ -153,7 +148,6 @@ void folynomial:: add(folynomial f1, folynomial f2)
    (f.p).equalto(p3);
    f.exp = 1;
    F.push_back(f);
-   //sim();
 }
 void folynomial:: sub(folynomial f1, folynomial f2)
 {
@@ -224,14 +218,12 @@ void folynomial:: sub(folynomial f1, folynomial f2)
                        (j->p).assignconst(((j->p).value())/((i->p).value()));
                        F.push_front((*i));
                        i = (f1.F).erase(i);
-                       //j = (f2.F).erase(j);
                        break;
                    }
                    else if((i->p).value()>(j->p).value())
                    {
                        (i->p).assignconst(((i->p).value())/((j->p).value()));
                        F.push_front((*j));
-                       //i = (f1.F).erase(i);
                        j = (f2.F).erase(j);
                        break;
                    }
@@ -255,7 +247,6 @@ void folynomial:: sub(folynomial f1, folynomial f2)
    (f.p).equalto(p3);
    f.exp = 1;
    F.push_back(f);
-   //sim();
 }
 
 polynomial folynomial:: expand()
@@ -315,28 +306,6 @@ void folynomial:: mult(folynomial f1, folynomial f2)
         F.push_back((*i));
     for(j=(f2.F).begin(); j!=(f2.F).end(); ++j)
         F.push_back((*j));
-   /* polynomial p1;
-     p1.unit();
-     i = F.begin();
-     while(i!=F.end())
-     {
-         flag = 0;
-         if((i->p).isconst())
-         {
-             folynomial f;
-             (f.F).push_back((*i));
-             p1.inmult(f.expand());
-             i = F.erase(i);
-             flag = 1;
-         }
-         if(flag!=1)
-            ++i;
-     }
-     foly f;
-     (f.p).equalto(p1);
-     f.exp = 0;
-     F.push_front(f);*/
-     //sim();
 }
 void folynomial:: inmult(folynomial f)
 {
@@ -358,23 +327,14 @@ void folynomial:: num(folynomial f1,folynomial f2)
        {
            if((i->p).isequal((j->p)))
            {
-               //foly f;
                if(i->exp > j->exp)
                {
-                   //(f.p).equalto((j->p));
-                   //f.exp = j->exp;
-                   //F.push_back(f);
-
                    (i->exp) = (i->exp) - (j->exp);
                    j = (f2.F).erase(j);
                    goto label;
                }
                else if(i->exp < j->exp)
                {
-                   //(f.p).equalto((j->p));
-                   //f.exp = i->exp;
-                   //F.push_back(f);
-
                    (j->exp) = (j->exp) - (i->exp);
                    flag = 1;
                    i = (f1.F).erase(i);
@@ -382,9 +342,6 @@ void folynomial:: num(folynomial f1,folynomial f2)
                }
                else
                {
-                   //(f.p).equalto((j->p));
-                   //f.exp = j->exp;
-                   //F.push_back(f);
                    i = (f1.F).erase(i);
                    j = (f2.F).erase(j);
                    flag = 1;
@@ -412,22 +369,17 @@ void folynomial:: num(folynomial f1,folynomial f2)
                    if((i->p).value()<(j->p).value())
                    {
                        (j->p).assignconst(((j->p).value())/((i->p).value()));
-                       //F.push_front((*i));
                        i = (f1.F).erase(i);
-                       //j = (f2.F).erase(j);
                        break;
                    }
                    else if((i->p).value()>(j->p).value())
                    {
                        (i->p).assignconst(((i->p).value())/((j->p).value()));
-                       //F.push_front((*j));
-                       //i = (f1.F).erase(i);
                        j = (f2.F).erase(j);
                        break;
                    }
                    else
                    {
-                       //F.push_front((*i));
                        i = (f1.F).erase(i);
                        j = (f2.F).erase(j);
                    }
@@ -451,14 +403,6 @@ void folynomial:: num(folynomial f1,folynomial f2)
    }
 
    F.assign((f1.F).begin(),(f1.F).end());
-   /*polynomial p1,p2,p3;
-   p1 = f1.expand();
-   p2 = f2.expand();
-   p3.add(p1,p2);
-   foly f;
-   (f.p).equalto(p3);
-   f.exp = 1;
-   F.push_back(f);*/
 }
 void folynomial:: den(folynomial f1, folynomial f2)
 {
@@ -473,23 +417,14 @@ void folynomial:: den(folynomial f1, folynomial f2)
        {
            if((i->p).isequal((j->p)))
            {
-               //foly f;
                if(i->exp > j->exp)
                {
-                   //(f.p).equalto((j->p));
-                   //f.exp = j->exp;
-                   //F.push_back(f);
-
                    (i->exp) = (i->exp) - (j->exp);
                    j = (f2.F).erase(j);
                    goto label;
                }
                else if(i->exp < j->exp)
                {
-                   //(f.p).equalto((j->p));
-                   //f.exp = i->exp;
-                   //F.push_back(f);
-
                    (j->exp) = (j->exp) - (i->exp);
                    flag = 1;
                    i = (f1.F).erase(i);
@@ -497,9 +432,6 @@ void folynomial:: den(folynomial f1, folynomial f2)
                }
                else
                {
-                   //(f.p).equalto((j->p));
-                   //f.exp = j->exp;
-                   //F.push_back(f);
                    i = (f1.F).erase(i);
                    j = (f2.F).erase(j);
                    flag = 1;
@@ -527,22 +459,17 @@ void folynomial:: den(folynomial f1, folynomial f2)
                    if((i->p).value()<(j->p).value())
                    {
                        (j->p).assignconst(((j->p).value())/((i->p).value()));
-                       //F.push_front((*i));
                        i = (f1.F).erase(i);
-                       //j = (f2.F).erase(j);
                        break;
                    }
                    else if((i->p).value()>(j->p).value())
                    {
                        (i->p).assignconst(((i->p).value())/((j->p).value()));
-                       //F.push_front((*j));
-                       //i = (f1.F).erase(i);
                        j = (f2.F).erase(j);
                        break;
                    }
                    else
                    {
-                       //F.push_front((*i));
                        i = (f1.F).erase(i);
                        j = (f2.F).erase(j);
                    }

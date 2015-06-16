@@ -7,15 +7,11 @@
 #include "polynomial.h"
 #include "transferfunction.h"
 using namespace std;
-//namespace one
-//{
     transferfunction p;
     vector<int> x;
     vector<int> visited;
     vector<int> deptm;
     int t=0;
-    //vector<int> visited;
-//}
 void digraph:: declare()
 {
     int x,k,m;
@@ -193,7 +189,6 @@ void digraph:: getloops()
    vector<Gp>:: iterator j;
    while(i!=loops.end()){
     j=i+1;
-    //i--;
     int flag=0;
     while(j!=loops.end()){
 
@@ -207,7 +202,6 @@ void digraph:: getloops()
                 break;
             }
     }
-    //if(flag!=1)
         j++;
    }
    if(flag!=1)
@@ -273,18 +267,13 @@ void digraph:: del(int v, vector<Gp> loops1)
 }
 void digraph:: getdelta()
 {
-    //t=1;
 delta.unit();
 transferfunction x;
 for(int i=0; i<loops.size(); i++)
 {
     x.inadd(loops[i].gain);
 }
-//delta.display();
-//cout << endl;
 delta.insub(x);
-//delta.display();
-//cout << endl;
 for(int i=0; i<loops.size(); i++){
         t=1;
     del(i,loops);

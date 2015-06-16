@@ -2,7 +2,6 @@
 #include <iostream>
 #include <list>
 #include <cmath>
-//#include "transferfunction.h"
 using namespace std;
 
 void polynomial:: declare()
@@ -38,7 +37,6 @@ void polynomial:: display()
        {
            if(i == P.begin())
            {
-               //if(i->coeff < 0)
                 cout <<  i->coeff;
            }
            else
@@ -126,7 +124,6 @@ void polynomial:: display()
    }
 
 }
-//cout << endl;
 }
 void polynomial:: add(polynomial p1, polynomial p2)
 {
@@ -314,12 +311,3 @@ void polynomial:: assignconst(float n)
     p.exp = 0;
     P.push_back(p);
 }
-/*bool polynomial:: one()
-{
-    list<poly>:: iterator k = P.begin();
-    if(k->coeff == 1 && k->exp == 0)
-        return true;
-    else
-        return false;
-}*/
-

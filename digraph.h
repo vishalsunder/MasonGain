@@ -8,11 +8,6 @@
 #include "folynomial.h"
 #include "transferfunction.h"
 using namespace std;
-/*struct node
-{
-    int nodeno;
-    vector<int> neighbour;
-};*/
 struct sparse
 {
     int from;

@@ -3,7 +3,6 @@
 #include <iostream>
 #include <list>
 #include <cmath>
-//#include "transferfunction.h"
 using namespace std;
 struct poly
 {
@@ -29,6 +28,5 @@ public:
     bool isunit();
     float value(void);
     void assignconst(float);
-        //bool one(void);
 };
 #endif // POLYNOMIAL_H

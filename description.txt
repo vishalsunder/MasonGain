@@ -1,0 +1,2 @@
+Given a signal flow graph for any linear system, the set of codes calculate the transfer function corresponding to an input and an output node.
+This set also contains ADTs for polynomials, factorized polynomials and transfer functions, which were designed for the above purpose.
